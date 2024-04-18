@@ -4,7 +4,7 @@ nums = ["zero", "one","two","three","four", "five", "six", "seven", "eight", "ni
 def replaceLine(t):
     for i in range(0, 2):
         for j  in range(0, len(nums)):
-            t = t.replace(nums[j], str(j) + nums[j][-1])
+            t = t.replace(nums[j], nums[j][0] + str(j) + nums[j][-1])
     return t
 
 with open('AdventOfCode\Day1\data.txt', 'r') as file:
@@ -18,7 +18,7 @@ with open('AdventOfCode\Day1\data.txt', 'r') as file:
             if character.isnumeric():
                 charArray.append(character)
         solution = int(charArray[0] + charArray[-1])
-        print(f'{i} : {line} : {solution}')
+        print(f'{i}\n:  {convStr} : {line} : {solution}')
         sum = sum + solution
 
 print(sum)
