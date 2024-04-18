@@ -1,17 +1,24 @@
-# Value found from each line of data.txt file
-sumArray = []
+sum = 0
+nums = ["zero", "one","two","three","four", "five", "six", "seven", "eight", "nine"]
 
+def replaceLine(t):
+    for i in range(0, 2):
+        for j  in range(0, len(nums)):
+            t = t.replace(nums[j], str(j) + nums[j][-1])
+    return t
 
-with open('Advent of Code/Day 1/data.txt', 'r') as file:
+with open('AdventOfCode\Day1\data.txt', 'r') as file:
+
+    i=0
     for line in file:
+        i = i+1
+        convStr = replaceLine(line)
         charArray = []
-        # Separate line of file in array of characters
-        for character in line:
+        for character in convStr:
             if character.isnumeric():
                 charArray.append(character)
         solution = int(charArray[0] + charArray[-1])
-        sumArray.append(solution)
+        print(f'{i} : {line} : {solution}')
+        sum = sum + solution
 
-
-# Takes sum of all number 
-print(sum(sumArray))
+print(sum)
