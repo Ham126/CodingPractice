@@ -2,7 +2,7 @@
 sumArray = []
 
 
-with open('Advent of Code/Day 1/data.txt', 'r') as file:
+with open('AdventofCode/Day1/data.txt', 'r') as file:
     for line in file:
         charArray = []
         # Separate line of file in array of characters
